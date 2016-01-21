@@ -102,8 +102,8 @@ public class Session {
         }
         
         /**
-         * Sets the OAuth 2.0 Credential. See {@link OAuth2Credentials} for
-         * assistance with creating them.  Exactly one of OAuth 2.0 credential or the server token must be present.
+         * Sets the requested locale through the Accept-Language http header. See https://developer.uber.com/docs/localization for
+         * possible Locales
          */
         public Builder setAcceptLanguage(Locale l) {
             this.locale = l;
@@ -153,6 +153,9 @@ public class Session {
         return serverToken;
     }
     
+    /**
+     * Get the requested language locale for API requests
+     */
     @Nullable
     public Locale getLocale() {
         return locale;
