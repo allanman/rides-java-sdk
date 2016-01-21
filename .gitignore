@@ -25,3 +25,4 @@ obj
 
 *my_secrets.properties
 log.txt
+/.nb-gradle/
