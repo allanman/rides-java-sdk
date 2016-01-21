@@ -105,6 +105,7 @@ public class RetrofitUberRidesClient {
                         restAdapter.create(internalApiServiceClass)));
 
         return (U) new RetrofitAdapter(internalService);
+        
     }
 
     /**
@@ -126,6 +127,10 @@ public class RetrofitUberRidesClient {
                     requestFacade.addHeader("Authorization", "Bearer " + credential.getAccessToken());
                 } else {
                     requestFacade.addHeader("Authorization", "Token " + session.getServerToken());
+                }
+                
+                if (session.getLocale() != null) {
+                    requestFacade.addHeader("Accept-Language", session.getLocale().toLanguageTag());
                 }
 
                 requestFacade.addHeader("X-Uber-User-Agent", "Java Rides SDK v" + LIB_VERSION);
