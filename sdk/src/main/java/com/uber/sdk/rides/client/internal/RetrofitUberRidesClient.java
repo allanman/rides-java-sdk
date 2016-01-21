@@ -105,7 +105,6 @@ public class RetrofitUberRidesClient {
                         restAdapter.create(internalApiServiceClass)));
 
         return (U) new RetrofitAdapter(internalService);
-        
     }
 
     /**
