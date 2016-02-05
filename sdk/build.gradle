@@ -19,6 +19,12 @@ artifacts {
     archives sourcesJar
     archives javadocJar
 }
+install {
+    repositories.mavenInstaller {
+        pom.version = '0.1.2'
+        pom.artifactId = 'rides'
+    }
+}
 
 //signing {
 //    sign configurations.archives

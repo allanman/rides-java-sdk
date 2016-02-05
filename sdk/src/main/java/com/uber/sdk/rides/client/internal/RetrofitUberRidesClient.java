@@ -46,6 +46,8 @@ import java.lang.reflect.Method;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Nullable;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
 
 import retrofit.RequestInterceptor;
 import retrofit.RestAdapter;
@@ -141,6 +143,7 @@ public class RetrofitUberRidesClient {
             httpClient.setConnectTimeout(1, TimeUnit.MINUTES);
             httpClient.setReadTimeout(1, TimeUnit.MINUTES);
             httpClient.setFollowRedirects(false);
+            httpClient.setSslSocketFactory(HttpsURLConnection.getDefaultSSLSocketFactory());
         }
 
         return new RestAdapter.Builder()
